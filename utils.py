@@ -13,6 +13,9 @@ def link(utube_link):
         return result
     except:
         return "Sorry there was an issue,Please check if the video have subtitle/captions turned on"
+    else:
+        return "Sorry there was an issue,Please check if the video have subtitle/captions turned on"
+        
 
 
 '''def summarized(utube_link):
