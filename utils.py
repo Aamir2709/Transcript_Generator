@@ -1,4 +1,4 @@
-from transformers import pipeline
+
 from youtube_transcript_api import YouTubeTranscriptApi
 from IPython.display import YouTubeVideo
 
@@ -15,7 +15,7 @@ def link(utube_link):
         return "Sorry there was an issue,Please check if the video have subtitle/captions turned on"
 
 
-def summarized(utube_link):
+'''def summarized(utube_link):
     video_id_list = utube_link.split("=")
     video_id = video_id_list[1]
     try:
@@ -38,6 +38,6 @@ def summarized(utube_link):
             summarized_text.append(out)
         return summarized_text
     except:
-        return "Sorry there was an issue"
+        return "Sorry there was an issue"'''
     
 #print(link("https://www.youtube.com/watch?v=A4OmtyaBHFE"))
