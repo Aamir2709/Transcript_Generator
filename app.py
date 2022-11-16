@@ -1,10 +1,7 @@
 from flask import Flask,request,render_template
 app = Flask(__name__,template_folder='template')
-import numpy as np
-import pandas as pd
-import pickle
 from flask_cors import CORS,cross_origin
-import requests,bs4
+
 import utils
 
 @app.route('/')
