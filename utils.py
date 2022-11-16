@@ -3,18 +3,21 @@ from youtube_transcript_api import YouTubeTranscriptApi
 from IPython.display import YouTubeVideo
 
 def link(utube_link):
-    video_id_list = utube_link.split("=")
-    video_id = video_id_list[1]
-    try:
-        transcript = YouTubeTranscriptApi.get_transcript(video_id)
-        result = ""
-        for i in transcript:
-            result += ' ' + i['text']
-        return result
-    except:
+   if "=" not in utube_link:
         return "Sorry there was an issue,Please check if the video have subtitle/captions turned on"
     else:
-        return "Sorry there was an issue,Please check if the video have subtitle/captions turned on"
+        video_id_list = utube_link.split("=")
+        video_id = video_id_list[1]
+        try:
+            transcript = YouTubeTranscriptApi.get_transcript(video_id)
+            result = ""
+            for i in transcript:
+                result += ' ' + i['text']
+            return result
+        except:
+            return "Sorry there was an issue,Please check if the video have subtitle/captions turned on"
+        else:
+            return "Sorry there was an issue,Please check if the video have subtitle/captions turned on"
         
 
 
