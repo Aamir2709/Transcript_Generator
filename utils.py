@@ -5,7 +5,7 @@ from IPython.display import YouTubeVideo
 def link(utube_link):
    if "=" not in utube_link:
         return "Sorry there was an issue,Please check if the video have subtitle/captions turned on"
-    else:
+   else:
         video_id_list = utube_link.split("=")
         video_id = video_id_list[1]
         try:
