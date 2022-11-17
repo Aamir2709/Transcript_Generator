@@ -21,7 +21,7 @@ def summarizer():
 @app.route('/get_summarized',methods=['POST'])
 def generate_summarizer():
     utube_link = str(request.form.get('email'))
-    result = utils.summarized(utube_link)
+    result = utils.summarizer(utube_link)
     return render_template("summerizer.html",result=result)
 
 
