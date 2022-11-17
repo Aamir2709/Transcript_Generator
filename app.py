@@ -1,8 +1,8 @@
 from flask import Flask,request,render_template
+import utils
 app = Flask(__name__,template_folder='template')
 from flask_cors import CORS,cross_origin
 
-import utils
 
 @app.route('/')
 def index():
@@ -21,8 +21,8 @@ def summarizer():
 @app.route('/get_summarized',methods=['POST'])
 def generate_summarizer():
     utube_link = str(request.form.get('email'))
-    result = utils.summarizer(utube_link)
-    return render_template("summerizer.html",result=result)
+    summary = utils.summarizer(utube_link)
+    return render_template("summerizer.html",result=summary)
 
 
 
